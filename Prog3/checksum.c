@@ -9,7 +9,7 @@ unsigned short checksum(){
 
     for(i=0; i<10;i++){
         // printf("Field %d\n", i+1);
-        scanf("%x", &fields[i]);
+        scanf("%hx", &fields[i]);
         sum = sum + (unsigned short) fields[i];
         while (sum>>16)
             sum = (sum & 0xFFFF) + (sum >> 16);
@@ -25,10 +25,10 @@ int main(){
 
     //Sender
     result1 = checksum();
-    printf("\nComputer Checksum at sender: %x\n", result1);
+    printf("\nComputer Checksum at sender: %hx\n", result1);
     //Receiver
     result2 = checksum();
-    printf("\nComputerd Checksum at receiver: %x\n", result2);
+    printf("\nComputerd Checksum at receiver: %hx\n", result2);
 
     if (result2 == 0x0000)
         printf("No error");

@@ -13,8 +13,6 @@ long int gcd(long int a, long int b)
     return gcd(b, a%b);
 }
 
-
-
 long int isprime(long int a)
 {
     int i;
@@ -75,7 +73,7 @@ int main()
     printf( "Public key (n,  e): (%ld, %ld)\n",n,e);
     printf("Private key (n, d): (%ld, %ld)\n",n,d);
     for (i = 0; i<len; i++)
-    cipher[i] = encrypt(text[i], n, e);
+        cipher[i] = encrypt(text[i], n, e);
     printf("Encrypted message: \n");
     for (i = 0; i<len; i++)
         printf("%ld",cipher[i]);
